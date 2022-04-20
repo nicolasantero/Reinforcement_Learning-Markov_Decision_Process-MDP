@@ -39,7 +39,7 @@ Para isso, ele conta com:
 
 Sabendo disso, podemos entender que o processo de decisão de Markov (PDM) é independente de ações do passado, ou seja, as ações futuras serão tomadas com base nas variáveis atuais, ou seja, $S_t$ e $R_t$. 
 
-![ambiente mdp](https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/agente_ambiente.jpg?raw=true)
+![ambiente mdp](https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/agente_ambiente.jpg?raw=false)
 
 Essa figura ilustra que o ambiente dá ao agente o estado e a recompensa atual, e o agente toma alguma decisão que altera o ambiente, de modo que isso se torna um ciclo.
 
