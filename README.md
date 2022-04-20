@@ -12,7 +12,6 @@ Temos como objetivo minimizar o tempo de trajeto de um aluno saindo de carro de 
 
 A dinâmica do ambiente pode ser vista na figura 1
 
-![Dinamica ambiente](https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/MDP.PNG?raw=true)
 <img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/MDP.PNG" width="400">
 
 
@@ -42,14 +41,13 @@ Para isso, ele conta com:
 
 Sabendo disso, podemos entender que o processo de decisão de Markov (PDM) é independente de ações do passado, ou seja, as ações futuras serão tomadas com base nas variáveis atuais, ou seja, $S_t$ e $R_t$. 
 
-![ambiente mdp](https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/agente_ambiente.jpg?raw=false)
+<img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/agente_ambiente.jpg" width="400">
 
 Essa figura ilustra que o ambiente dá ao agente o estado e a recompensa atual, e o agente toma alguma decisão que altera o ambiente, de modo que isso se torna um ciclo.
 
 A forma utilizada para resolver o PDM nesta solução foi a Iteração de Valor (\emph{Value Iteration}). Como o objetivo final é conseguir o maior valor de recompensa acumulado, o processo utiliza a equação de otimização de Bellman:
 
-
-![bellman](https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/bellman.png?raw=true)
+<img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/bellman.png" width="400">
 
 A \emph{Value Iteration} é uma técnica de aprendizado por reforço. Ela computa o valor resultante para cada iteração e adiciona o valor mais alto à política atual. 
 
