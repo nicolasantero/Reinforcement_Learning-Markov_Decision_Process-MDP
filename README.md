@@ -10,12 +10,12 @@ Sabendo de início o ponto de partida e de chegada, assim como informações his
 
 Temos como objetivo minimizar o tempo de trajeto de um aluno saindo de carro de sua casa com destino a Universidade Federal de Santa Catarina, considerando que as condições das estradas não se alteram, não há novas construções, as estradas não são fechadas e não há qualquer outro imprevisto que possa alterar a dinâmica das estradas. Dessa forma, temos dados suficientes para saber o que irá acontecer ao longo do caminho. Ainda, devemos nos atentar ao fato de que, a cada decisão de rota tomada, teremos uma mudança no estado atual, ou seja, o aluno terá novas decisões de rotas a serem tomadas, portanto a dinâmica de estados não é fixa.
 
-A dinâmica do ambiente pode ser vista na figura 1
+A dinâmica do ambiente pode ser vista na seguinte figura.
 
 <img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/MDP.PNG" width="400">
 
 
-Para resolução do problema defina os estados e ambiente como apresentado na figura 1. Podemos ver que existem caminhos com buracos, semáforos e faixa de pedestre. Nesses casos o tempo de trajeto pode ser elevado caso tomemos a decisão de seguir por esses caminhos. Dessa forma, consideramos que ir por esse caminho afetará negativamente as nossa decisões.
+Para resolução do problema defina os estados e ambiente como apresentado na figura. Podemos ver que existem caminhos com buracos, semáforos e faixa de pedestre. Nesses casos o tempo de trajeto pode ser elevado caso tomemos a decisão de seguir por esses caminhos. Dessa forma, consideramos que ir por esse caminho afetará negativamente as nossa decisões.
 
 
 <img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/ambienteMDP.png" width="200" height="200">
