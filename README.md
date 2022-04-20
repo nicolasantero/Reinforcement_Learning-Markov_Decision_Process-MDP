@@ -75,3 +75,20 @@ Algoritmo:
 A solução desse problema foi desenvolvida utilizando \emph{Python} e aplicando o algoritmo iterativo descrito até a convergência.
 
 
+## Referências
+
+BARTO, Richard S. Sutton And Andrew G.. Reinforcement Learning: an introduction. Cambridge,
+
+Massachusetts: The Mit Press, 1992. Dispon ́ıvel em: http://incompleteideas.net/book/first/ebook/the-
+
+• BHANDARKAR, Raghuveer. Policy Iteration in RL: a step by step illustration. A step by step
+
+Illustration. Dispon ́ıvel em: https://towardsdatascience.com/policy-iteration-in-rl-an-illustration-
+
+• SILVER, David. UCL Course on RL. 2015. Dispon ́ıvel em: https://www.davidsilver.uk/teaching/.
+
+• POOLE, David; MACKWORTH, Alan. Artificial Intelligence: foundations of computational agents.
+
+Vancouver: Cambridge University Press, 2017. Dispon ́ıvel em: https://artint.info/aifca1e.html.
+
+
