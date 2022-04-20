@@ -2,7 +2,7 @@
 Processo de decisao de Markov para encontrar trajeto ótimo
 
 
-PROBLEMA SIMULADO:
+## PROBLEMA SIMULADO:
 
 Como escolher o melhor caminho para se chegar em um destino?
 
@@ -21,7 +21,7 @@ Para resolução do problema defina os estados e ambiente como apresentado na fi
 <img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/ambienteMDP.png" width="200" height="200">
 
 
-Solução:
+## Solução:
 
 Para entendermos como funciona a solução apresentada, primeiramente é preciso entender o conceito de agente e ambiente. 
 
@@ -54,7 +54,7 @@ A \emph{Value Iteration} é uma técnica de aprendizado por reforço. Ela comput
 O algoritmo utilizado para a implementação dessa técnica converge com base em um erro mínimo aceitável pré definido e exige bastante tempo por iteração, já que sempre examina todo o conjunto de espaços.
 
 
-Algoritmo:
+## Algoritmo:
 
 
 - Loop infinito até atingir convergência:
@@ -78,14 +78,14 @@ A solução desse problema foi desenvolvida utilizando \emph{Python} e aplicando
 ## Referências
 
 BARTO, Richard S. Sutton And Andrew G.. Reinforcement Learning: an introduction. Cambridge,
-Massachusetts: The Mit Press, 1992. Dispon ́ıvel em: http://incompleteideas.net/book/first/ebook/the-
+Massachusetts: The Mit Press, 1992. Disponível em: http://incompleteideas.net/book/first/ebook/the-book.html
 
 • BHANDARKAR, Raghuveer. Policy Iteration in RL: a step by step illustration. A step by step
-Illustration. Dispon ́ıvel em: https://towardsdatascience.com/policy-iteration-in-rl-an-illustration-
+Illustration. Disponível em: https://towardsdatascience.com/policy-iteration-in-rl-an-illustration-6d58bdcb87a7
 
-• SILVER, David. UCL Course on RL. 2015. Dispon ́ıvel em: https://www.davidsilver.uk/teaching/.
+• SILVER, David. UCL Course on RL. 2015. Disponível em: https://www.davidsilver.uk/teaching/.
 
 • POOLE, David; MACKWORTH, Alan. Artificial Intelligence: foundations of computational agents.
-Vancouver: Cambridge University Press, 2017. Dispon ́ıvel em: https://artint.info/aifca1e.html.
+Vancouver: Cambridge University Press, 2017. Disponível em: https://artint.info/aifca1e.html.
 
 
