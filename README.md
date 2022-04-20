@@ -2,7 +2,7 @@
 Processo de decisao de Markov para encontrar trajeto ótimo
 
 
-## PROBLEMA SIMULADO:
+## Problema simulado:
 
 Como escolher o melhor caminho para se chegar em um destino?
 
