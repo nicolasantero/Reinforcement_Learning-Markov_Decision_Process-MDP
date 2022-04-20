@@ -17,7 +17,7 @@ A dinâmica do ambiente pode ser vista na figura 1
 Para resolução do problema defina os estados e ambiente como apresentado na figura 1. Podemos ver que existem caminhos com buracos, semáforos e faixa de pedestre. Nesses casos o tempo de trajeto pode ser elevado caso tomemos a decisão de seguir por esses caminhos. Dessa forma, consideramos que ir por esse caminho afetará negativamente as nossa decisões.
 
 
-![ambiente mdp](https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/ambienteMDP.png?raw=true)
+![ambiente mdp](https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/ambienteMDP.png?raw=true | width=100)
 
 Solução:
 
