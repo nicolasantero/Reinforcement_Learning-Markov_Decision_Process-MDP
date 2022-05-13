@@ -1,91 +1,91 @@
-# Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco
-Processo de decisao de Markov para encontrar trajeto ótimo
+# Markov_Decision_Process-MDP--Reinforcement_Learning
+
+Markov Decision Process to find optimal path.
 
 
-## Problema simulado:
+## Problem:
 
-Como escolher o melhor caminho para se chegar em um destino?
+How to choose the best path to reach a destination?
 
-Sabendo de início o ponto de partida e de chegada, assim como informações históricas que nos ajudam a determinar as condições dos caminhos, podemos ter uma infinidade de possíveis caminhos para se chegar ao destino final. A decisão a ser feita depende do estado atual das estradas, relativo a condições de tráfego, limite de velocidade, semáforos, etc.
+Knowing the starting and ending point, as well as historical information that helps us determine the conditions of the roads, we can have a multitude of possible routes to reach the final destination. The decision to be made depends on the current state of the roads, relative to traffic conditions, speed limits, traffic lights, etc.
 
-Temos como objetivo minimizar o tempo de trajeto de um aluno saindo de carro de sua casa com destino a Universidade Federal de Santa Catarina, considerando que as condições das estradas não se alteram, não há novas construções, as estradas não são fechadas e não há qualquer outro imprevisto que possa alterar a dinâmica das estradas. Dessa forma, temos dados suficientes para saber o que irá acontecer ao longo do caminho. Ainda, devemos nos atentar ao fato de que, a cada decisão de rota tomada, teremos uma mudança no estado atual, ou seja, o aluno terá novas decisões de rotas a serem tomadas, portanto a dinâmica de estados não é fixa.
+Our goal is to minimize the travel time for a student leaving his or her home by car to the University, considering that the road conditions don't change, there are no new constructions, the roads won't be closed or any other unforeseen event that could alter the dynamics of the roads. Thus, we have enough data to know what will happen along the way. Still, we must pay attention to the fact that, at each route decision made, we will have a change in the current state, that is, the student will have new route decisions to be made, so the dynamics of states is not fixed.
 
-A dinâmica do ambiente pode ser vista na seguinte figura.
+The dynamics of the environment can be seen in the following figure.
 
 <img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/MDP.PNG" width="400">
 
 
-Para resolução do problema defina os estados e ambiente como apresentado na figura. Podemos ver que existem caminhos com buracos, semáforos e faixa de pedestre. Nesses casos o tempo de trajeto pode ser elevado caso tomemos a decisão de seguir por esses caminhos. Dessa forma, consideramos que ir por esse caminho afetará negativamente as nossa decisões.
+To solve the problem, define the states and environment as shown in the picture. We can see that there are paths with holes, traffic lights and crosswalks. In these cases the travel time can be high if we make the decision to follow these paths. So we consider that going this way will negatively affect our decisions.
 
 
 <img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/ambienteMDP.png" width="200" height="200">
 
 
-## Solução:
+## Solution:
 
-Para entendermos como funciona a solução apresentada, primeiramente é preciso entender o conceito de agente e ambiente. 
+To understand how the presented solution works, we first need to understand the concept of agent and environment. 
 
-O ambiente é o cenário ou situação em que o agente se encontra. O agente usa as informações que ele consegue do ambiente para tomar as decisões necessárias para alcançar um objetivo.
+The environment is the scenario or situation in which the agent finds itself. The agent uses the information it gets from the environment to make the necessary decisions to achieve a goal.
 
-Para o processo de decisão de Markov, utilizado nessa solução, quando é possível tomar várias decisões, o objetivo é obter a maior recompensa possível no final do processo. Portanto, podemos estabelecer uma política que envolva o sacrifício de uma boa decisão a fim de atingir esse objetivo final.
+For the Markov decision process used in this solution, when multiple decisions can be made, the goal is to obtain the highest possible reward at the end of the process. Therefore, we can establish a policy that involves the sacrifice of a good decision in order to achieve this final goal.
 
-Para isso, ele conta com:
-
-
-- Conjunto de estados (S): todas as possíveis localizações do agente no ambiente.
-- Conjunto de ações (A):  todas as ações que podem ser tomadas pelo agente estando em determinado estado. 
-- Probabilidades de transição: probabilidade de que uma ação seja bem sucedida ao longo prazo. 
-- Recompensa (R): o valor adquirido ao chegar em algum estado.
-- Fator de desconto ($\gamma$): diminui o valor de futuras recompensas se comparado com as recompensas atuais.
+To do this, it relies on:
 
 
-Sabendo disso, podemos entender que o processo de decisão de Markov (PDM) é independente de ações do passado, ou seja, as ações futuras serão tomadas com base nas variáveis atuais, ou seja, $S_t$ e $R_t$. 
+- Set of states (S): all possible locations of the agent in the environment.
+- Set of actions (A): all the actions that can be taken by the agent in a given state. 
+- Transition Probabilities: probability that an action will be successful in the long run. 
+- Reward (R): the value acquired by reaching some state.
+- Discount factor ($\gamma$): decreases the value of future rewards compared to current rewards.
+
+
+Knowing this, we can understand that the Markov decision process (MDP) is independent of past actions, in other words, future actions will be taken based on the current variables, that is, $S_t$ and $R_t$. 
 
 <img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/agente_ambiente.jpg" width="400">
 
-Essa figura ilustra que o ambiente dá ao agente o estado e a recompensa atual, e o agente toma alguma decisão que altera o ambiente, de modo que isso se torna um ciclo.
+This figure illustrates that the environment gives the agent the current state and reward, and the agent makes some decision that changes the environment, so this turns into a loop.
 
-A forma utilizada para resolver o PDM nesta solução foi a Iteração de Valor (\emph{Value Iteration}). Como o objetivo final é conseguir o maior valor de recompensa acumulado, o processo utiliza a equação de otimização de Bellman:
+The way used to solve the MDP in this solution was Value Iteration. Since the end goal is to achieve the highest cumulative reward value, the process uses the Bellman optimization equation:
 
 <img src="https://github.com/nicolasantero/Processo-de-decisao-de-Markov-MDP--Aprendizado-por-Reforco/blob/main/images/bellman.png" width="400">
 
-A \emph{Value Iteration} é uma técnica de aprendizado por reforço. Ela computa o valor resultante para cada iteração e adiciona o valor mais alto à política atual. 
-
-O algoritmo utilizado para a implementação dessa técnica converge com base em um erro mínimo aceitável pré definido e exige bastante tempo por iteração, já que sempre examina todo o conjunto de espaços.
-
-
-## Algoritmo:
+The \emph{Value Iteration} is a reinforcement learning technique. It computes the resulting value for each iteration and adds the highest value to the current policy. 
+The algorithm used to implement this technique converges based on a predefined minimum acceptable error and requires a lot of time per iteration, since it always examines the entire set of spaces.
 
 
-- Loop infinito até atingir convergência:
+## Algorithm:
+
+
+- Infinite loop until convergence is reached:
     
-- - Define uma variável erro := 0. 
-- - Para cada estado s no conjunto de estados:
-- - - v anterior := V(s)   (Armazena o valor anterior do estado)
-- - - v atual := 0
-- - - Para cada possível ação em um estado:
-- - - - v := valor de recompensa esperado passando por esse estado e ação
-- - - - se o valor de v calculado para a ação e estado for maior que o v atual:
-- - - - v atual := v
-- - - - politica do estado := ação que teve maior valor v
-- - - - V(s) := maior valor de v (v atual) dentre todas as diferentes ações do estado s
-- - - - erro := max(erro, |v anterior – V(s)|)
-- - - Se o erro for menor que epsilon o loop infinito se encerra, pois ocorreu a convergência.
+- - Sets an error variable := 0
+- - For each state s in the state set:
+- - - previous v := V(s) (Stores the previous value of the state)
+- - - current v := 0
+- - - For each possible action on a state:
+- - - - v := expected reward value passing through that state and action
+- - - - if the value of v calculated for the action and state is greater than the current v:
+- - - - current v := v
+- - - - state policy := action that had the highest v value
+- - - - V(s) := largest value of v (current v) among all the different actions in state s
+- - - - error := max(error, |previous v - V(s)|)
+- - - If error is less than epsilon the infinite loop terminates because convergence has occurred
 
-A solução desse problema foi desenvolvida utilizando \emph{Python} e aplicando o algoritmo iterativo descrito até a convergência.
+The solution to this problem was developed using \emph{Python} and applying the described iterative algorithm until convergence.
 
 
-## Referências
+## References
 
 BARTO, Richard S. Sutton And Andrew G.. Reinforcement Learning: an introduction. Cambridge,
-Massachusetts: The Mit Press, 1992. Disponível em: http://incompleteideas.net/book/first/ebook/the-book.html
+Massachusetts: The Mit Press, 1992. Available at: http://incompleteideas.net/book/first/ebook/the-book.html
 
 • BHANDARKAR, Raghuveer. Policy Iteration in RL: a step by step illustration. A step by step
-Illustration. Disponível em: https://towardsdatascience.com/policy-iteration-in-rl-an-illustration-6d58bdcb87a7
+Illustration. Available at: https://towardsdatascience.com/policy-iteration-in-rl-an-illustration-6d58bdcb87a7
 
-• SILVER, David. UCL Course on RL. 2015. Disponível em: https://www.davidsilver.uk/teaching/.
+• SILVER, David. UCL Course on RL. 2015. Available at: https://www.davidsilver.uk/teaching/.
 
 • POOLE, David; MACKWORTH, Alan. Artificial Intelligence: foundations of computational agents.
-Vancouver: Cambridge University Press, 2017. Disponível em: https://artint.info/aifca1e.html.
+Vancouver: Cambridge University Press, 2017. Available at: https://artint.info/aifca1e.html.
 
 
